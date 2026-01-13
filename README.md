@@ -1,70 +1,188 @@
-# Getting Started with Create React App
+CalmSense - Sensory Regulation Application for Autistic Children
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+📋 About the Project
+CalmSense is a digital sensory regulation application designed specifically for autistic children to help them manage emotions, practice calming techniques, and develop self-regulation skills in a safe, engaging environment.
 
-## Available Scripts
+🎯 Key Features
+Breathing Exercises - Guided breathing with visual animations
 
-In the project directory, you can run:
+Calming Sensory Tools - Color mixer, fidget spinner, rain simulation
 
-### `npm start`
+Emotion Recognition - Inside Out-inspired character interactions
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Sound Therapy - Customizable nature soundscapes
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Accessibility First - Dark mode, adjustable fonts, sound controls
 
-### `npm test`
+🚀 Quick Start
+Prerequisites
+Node.js (v14 or higher)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+npm or yarn
 
-### `npm run build`
+Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Clone the repository
+git clone <repository-url>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Navigate to project directory
+cd calmsense
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Install dependencies
+npm install
 
-### `npm run eject`
+# Start development server
+npm start
+Build for Production
+bash
+npm run build
+🏗️ Project Structure
+CALMSENSE/
+├── public/
+│   ├── images/
+│   │   ├── activities/        # Activity icons
+│   │   ├── backgrounds/       # Screen backgrounds
+│   │   ├── characters/        # Emotion characters
+│   │   └── misc/              # Additional graphics
+│   ├── sounds/                # Audio files for sound therapy
+│   ├── CalmSenselogo.png      # Application logo
+│   ├── favicon.ico           # Browser icon
+│   ├── index.html            # Main HTML file
+│   ├── manifest.json         # PWA configuration
+│   ├── robots.txt            # Search engine instructions
+│   ├── logo192.png           # PWA icon (small)
+│   └── logo512.png           # PWA icon (large)
+├── src/
+│   ├── components/           # React components
+│   │   ├── AccessibilityToolbar.js/.css
+│   │   ├── BreathingExercise.js/.css
+│   │   ├── CalmingTools.js/.css
+│   │   ├── EmotionRecognition.js/.css
+│   │   ├── HomeScreen.js/.css
+│   │   ├── SettingsPanel.js/.css
+│   │   └── SoundTherapy.js/.css
+│   ├── App.js               # Main application component
+│   ├── App.css              # Main styles
+│   ├── App.test.js          # Test file
+│   ├── index.js             # Application entry point
+│   ├── index.css            # Global styles
+│   ├── logo.svg             # React logo
+│   ├── reportWebVitals.js   # Performance monitoring
+│   └── setupTests.js        # Test configuration
+├── .gitignore               # Git ignore file
+├── package.json             # Project dependencies
+├── package-lock.json        # Dependency lock file
+└── README.md               # This file
+🛠️ Technology Stack
+Frontend: React.js 18.2.0
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Styling: CSS3 with Grid/Flexbox
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Audio: Web Audio API
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Build Tool: Create React App
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Deployment: Static hosting (Netlify/Vercel/GitHub Pages)
 
-## Learn More
+📱 Features in Detail
+1. Breathing Exercises
+Three breathing patterns: 4-2-6 (Relax), 4-4-4 (Balance), 5-0-5 (Calm)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Visual circle animation for guidance
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Timer and cycle tracking
 
-### Code Splitting
+Celebration animations every 3 cycles
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+2. Calming Sensory Tools
+Color Mixer: Interactive color blending with name generation
 
-### Analyzing the Bundle Size
+Fidget Spinner: Physics-based spinning with drag controls
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Rain Simulation: Animated rain with sound controls
 
-### Making a Progressive Web App
+3. Emotion Recognition
+Six emotions (Joy, Sadness, Anger, Fear, Anxiety, Disgust)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Large character images (180px) for clear visibility
 
-### Advanced Configuration
+Validation messages and coping suggestions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Mood updates in header
 
-### Deployment
+4. Sound Therapy
+Six nature sounds: ocean, forest, birds, stream, wind, fire
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Individual volume controls for each sound
 
-### `npm run build` fails to minify
+Quick presets (Relax, Focus, Sleep, Nature)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Visual sound mixer display
+
+5. Accessibility Features
+Dark/Light mode toggle
+
+Adjustable font size (12-24px)
+
+Sound on/off controls
+
+Character avatar selection (girl/boy)
+
+Touch-optimized interfaces
+
+🎨 Design Principles
+Simplicity: Clean, uncluttered interfaces
+
+Consistency: Predictable interactions
+
+Accessibility: WCAG-inspired guidelines
+
+Engagement: Interactive elements with immediate feedback
+
+Safety: No ads, no external links, no data collection
+
+📱 Responsive Design
+Desktop (>1024px): Multi-column layouts
+
+Tablet (768-1024px): 2-column adaptive grids
+
+Mobile (<480px): Single-column touch-optimized
+
+Minimum touch target: 48×48px
+
+🔧 Customization
+The application can be easily customized by:
+
+Adding new emotion characters in /public/images/characters/
+
+Adding new sound files in /public/sounds/
+
+Modifying color themes in CSS variables
+
+Adding new breathing patterns in BreathingExercise.js
+
+🧪 Testing
+bash
+# Run test suite
+npm test
+
+# Run with coverage
+npm test -- --coverage
+📄 License
+This project is developed for educational purposes as part of academic coursework.
+
+👤 Author
+Leena Sri K
+Roll No: CB.SC.U4CSE23526
+Academic Project - Sensory Regulation Application
+
+🙏 Acknowledgments
+Inspired by Inside Out characters for emotion recognition
+
+Nature sounds sourced from free, royalty-free libraries
+
+Designed with guidance from autism therapy resources
+
+Built with accessibility as a primary concern
+
+Designed with care for autistic children • Safe & Calm Space

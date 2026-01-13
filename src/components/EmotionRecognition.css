@@ -1,0 +1,1170 @@
+.emotion-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  animation: fadeIn 0.6s ease;
+}
+
+.emotion-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.emotion-header h2 {
+  font-family: 'Comfortaa', cursive;
+  font-size: 2.5rem;
+  color: #4a6fa5;
+  margin-bottom: 0.8rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.emotion-subtitle {
+  font-size: 1.2rem;
+  color: #5a6c8d;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.dark .emotion-subtitle {
+  color: #b0b9d6;
+}
+
+.emotion-intro {
+  margin-bottom: 2.5rem;
+}
+
+.intro-card {
+  background: linear-gradient(135deg, rgba(74, 111, 165, 0.1), rgba(162, 200, 232, 0.2));
+  border-radius: 25px;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  border: 3px solid rgba(74, 111, 165, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.dark .intro-card {
+  background: linear-gradient(135deg, rgba(121, 134, 203, 0.1), rgba(159, 168, 218, 0.2));
+  border-color: rgba(121, 134, 203, 0.4);
+}
+
+.intro-icon {
+  font-size: 3rem;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #4a6fa5, #2c4a7a);
+  color: white;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 8px 25px rgba(74, 111, 165, 0.3);
+}
+
+.intro-content h3 {
+  color: #2c4a7a;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.dark .intro-content h3 {
+  color: #7986cb;
+}
+
+.intro-content p {
+  color: #5a6c8d;
+  margin: 0;
+  line-height: 1.5;
+  font-size: 1.1rem;
+}
+
+.dark .intro-content p {
+  color: #b0b9d6;
+}
+
+.emotion-selection-section {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 30px;
+  padding: 2.5rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  border: 3px solid rgba(74, 111, 165, 0.1);
+}
+
+.dark .emotion-selection-section {
+  background: rgba(45, 55, 72, 0.95);
+  border-color: rgba(121, 134, 203, 0.2);
+}
+
+.emotion-selection-section h3 {
+  color: #9C27B0;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.dark .emotion-selection-section h3 {
+  color: #CE93D8;
+}
+
+.emotion-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.emotion-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.dark .emotion-card {
+  background: linear-gradient(135deg, rgba(45, 55, 72, 0.9), rgba(35, 45, 62, 0.7));
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.emotion-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--emotion-color, #4a6fa5);
+  opacity: 0.05;
+  transition: opacity 0.3s ease;
+}
+
+.emotion-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  border-color: var(--emotion-color);
+}
+
+.emotion-card:hover::before {
+  opacity: 0.1;
+}
+
+.emotion-card.selected {
+  background: linear-gradient(135deg, var(--emotion-color)10, var(--emotion-color)05);
+  border-color: var(--emotion-color);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 
+    0 15px 40px rgba(0,0,0,0.15),
+    0 0 0 3px var(--emotion-color)40;
+  animation: gentlePulseCard 2s infinite;
+}
+
+@keyframes gentlePulseCard {
+  0%, 100% { box-shadow: 0 15px 40px rgba(0,0,0,0.15), 0 0 0 3px var(--emotion-color)40; }
+  50% { box-shadow: 0 15px 40px rgba(0,0,0,0.15), 0 0 0 6px var(--emotion-color)40; }
+}
+
+.emotion-visual {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.character-image-container {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  z-index: 2;
+}
+
+.character-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2));
+  transition: transform 0.3s ease;
+}
+
+.emotion-card:hover .character-image {
+  transform: scale(1.1);
+}
+
+.character-emoji {
+  font-size: 4rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.emotion-circle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  opacity: 0.2;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.emotion-card:hover .emotion-circle {
+  transform: scale(1.1);
+  opacity: 0.3;
+}
+
+.emotion-info {
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+.emotion-name {
+  color: #2c3e50;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.dark .emotion-name {
+  color: #e0e0e0;
+}
+
+.emotion-card.selected .emotion-name {
+  color: var(--emotion-color);
+  font-weight: 800;
+}
+
+.emotion-tagline {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-bottom: 0.8rem;
+}
+
+.dark .emotion-tagline {
+  color: #aaa;
+}
+
+.selected-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  background: var(--emotion-color);
+  color: white;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  animation: slideInUp 0.3s ease;
+}
+
+.indicator-icon {
+  font-size: 1rem;
+}
+
+.indicator-text {
+  font-size: 0.85rem;
+}
+
+/* Emotion Details Section */
+.emotion-details-section {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 30px;
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  border: 3px solid rgba(74, 111, 165, 0.1);
+  animation: slideInUp 0.5s ease;
+}
+
+.dark .emotion-details-section {
+  background: rgba(45, 55, 72, 0.95);
+  border-color: rgba(121, 134, 203, 0.2);
+}
+
+.current-emotion-display {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.emotion-highlight {
+  flex-shrink: 0;
+}
+
+.highlight-circle {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  animation: gentleFloat 3s ease-in-out infinite;
+}
+
+@keyframes gentleFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.highlight-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.highlight-character {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 25px rgba(0,0,0,0.3));
+}
+
+.highlight-emoji {
+  font-size: 4rem;
+}
+
+.highlight-label {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+}
+
+.emotion-message {
+  flex: 1;
+  min-width: 300px;
+}
+
+.message-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.message-icon {
+  font-size: 2rem;
+  color: var(--current-color, #4a6fa5);
+}
+
+.message-header h3 {
+  color: var(--current-color, #2c3e50);
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.dark .message-header h3 {
+  color: var(--current-color, #7986cb);
+}
+
+.message-text {
+  color: #5a6c8d;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.dark .message-text {
+  color: #b0b9d6;
+}
+
+.validation-card {
+  background: linear-gradient(135deg, rgba(74, 111, 165, 0.1), rgba(162, 200, 232, 0.2));
+  border-radius: 20px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  border: 2px solid rgba(74, 111, 165, 0.3);
+}
+
+.dark .validation-card {
+  background: linear-gradient(135deg, rgba(121, 134, 203, 0.1), rgba(159, 168, 218, 0.2));
+  border-color: rgba(121, 134, 203, 0.4);
+}
+
+.validation-icon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+.validation-text p {
+  color: #2c4a7a;
+  margin: 0.3rem 0;
+  line-height: 1.4;
+}
+
+.dark .validation-text p {
+  color: #7986cb;
+}
+
+.validation-text strong {
+  color: #1a237e;
+  font-weight: 700;
+}
+
+.dark .validation-text strong {
+  color: #9fa8da;
+}
+
+/* Suggested Activities */
+.suggested-activities-section {
+  margin-bottom: 2.5rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section-header h4 {
+  color: #FF9800;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.dark .section-header h4 {
+  color: #FFB74D;
+}
+
+.section-subtitle {
+  color: #666;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.dark .section-subtitle {
+  color: #aaa;
+}
+
+.activity-suggestions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.activity-suggestion {
+  background: linear-gradient(135deg, rgba(255, 248, 225, 0.9), rgba(255, 236, 179, 0.7));
+  border-radius: 20px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  border: 2px solid rgba(255, 193, 7, 0.3);
+  transition: all 0.3s ease;
+}
+
+.dark .activity-suggestion {
+  background: linear-gradient(135deg, rgba(55, 65, 81, 0.9), rgba(45, 55, 71, 0.7));
+  border-color: rgba(255, 193, 7, 0.5);
+}
+
+.activity-suggestion:hover {
+  transform: translateX(10px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.suggestion-number {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #FF9800, #EF6C00);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.suggestion-icon {
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.dark .suggestion-icon {
+  background: rgba(26, 35, 126, 0.9);
+}
+
+.suggestion-details {
+  flex: 1;
+}
+
+.suggestion-details h5 {
+  color: #E65100;
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+}
+
+.dark .suggestion-details h5 {
+  color: #FFB74D;
+}
+
+.suggestion-details p {
+  color: #BF360C;
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.dark .suggestion-details p {
+  color: #FF8A65;
+}
+
+.suggestion-arrow {
+  font-size: 1.5rem;
+  color: #FF9800;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.activity-suggestion:hover .suggestion-arrow {
+  opacity: 1;
+  transform: translateX(5px);
+}
+
+/* Emotion Tips Section */
+.emotion-tips-section {
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(225, 245, 254, 0.9), rgba(179, 229, 252, 0.7));
+  border-radius: 25px;
+  border: 2px solid rgba(3, 169, 244, 0.3);
+}
+
+.dark .emotion-tips-section {
+  background: linear-gradient(135deg, rgba(30, 40, 55, 0.9), rgba(20, 30, 45, 0.7));
+  border-color: rgba(3, 169, 244, 0.5);
+}
+
+.emotion-tips-section h4 {
+  color: #0288D1;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.dark .emotion-tips-section h4 {
+  color: #4FC3F7;
+}
+
+.tips-container {
+  animation: fadeIn 0.6s ease;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.tip-item {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.dark .tip-item {
+  background: rgba(26, 35, 126, 0.95);
+}
+
+.tip-item:hover {
+  transform: translateY(-5px);
+  border-color: rgba(3, 169, 244, 0.3);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.tip-icon {
+  font-size: 2.5rem;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(3, 169, 244, 0.1), rgba(3, 169, 244, 0.05));
+  border-radius: 50%;
+  border: 2px solid rgba(3, 169, 244, 0.3);
+}
+
+.tip-item p {
+  color: #0277BD;
+  margin: 0;
+  font-weight: 500;
+  line-height: 1.4;
+  flex: 1;
+}
+
+.dark .tip-item p {
+  color: #81D4FA;
+}
+
+/* Emotion Reminders */
+.emotion-reminders {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.reminder-card {
+  background: linear-gradient(135deg, rgba(233, 30, 99, 0.1), rgba(156, 39, 176, 0.1));
+  border-radius: 20px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  border: 2px solid rgba(233, 30, 99, 0.3);
+  transition: all 0.3s ease;
+}
+
+.dark .reminder-card {
+  background: linear-gradient(135deg, rgba(233, 30, 99, 0.2), rgba(156, 39, 176, 0.2));
+  border-color: rgba(233, 30, 99, 0.5);
+}
+
+.reminder-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.reminder-icon {
+  font-size: 2.5rem;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.dark .reminder-icon {
+  background: rgba(26, 35, 126, 0.9);
+}
+
+.reminder-content h5 {
+  color: #D81B60;
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+}
+
+.dark .reminder-content h5 {
+  color: #F06292;
+}
+
+.reminder-content p {
+  color: #880E4F;
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.dark .reminder-content p {
+  color: #F8BBD0;
+}
+
+/* Inside Out Info */
+.inside-out-info {
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(46, 125, 50, 0.1));
+  border-radius: 25px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 2px solid rgba(76, 175, 80, 0.3);
+}
+
+.dark .inside-out-info {
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.2), rgba(46, 125, 50, 0.2));
+  border-color: rgba(76, 175, 80, 0.5);
+}
+
+.info-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.info-icon {
+  font-size: 2.5rem;
+}
+
+.info-header h4 {
+  color: #2E7D32;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.dark .info-header h4 {
+  color: #81C784;
+}
+
+.info-text {
+  color: #1B5E20;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.dark .info-text {
+  color: #A5D6A7;
+}
+
+.info-tip {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  border-left: 4px solid #4CAF50;
+}
+
+.dark .info-tip {
+  background: rgba(26, 35, 126, 0.9);
+  border-left-color: #81C784;
+}
+
+.tip-icon {
+  font-size: 1.5rem;
+  color: #4CAF50;
+  flex-shrink: 0;
+}
+
+.dark .tip-icon {
+  color: #81C784;
+}
+
+.info-tip p {
+  color: #2E7D32;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.dark .info-tip p {
+  color: #A5D6A7;
+}
+
+.info-tip strong {
+  color: #1B5E20;
+  font-weight: 700;
+}
+
+.dark .info-tip strong {
+  color: #81C784;
+}
+
+/* Encouragement */
+.emotion-encouragement {
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  border-radius: 25px;
+  padding: 2rem;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+  animation: gentlePulse 3s infinite;
+}
+
+@keyframes gentlePulse {
+  0%, 100% { 
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+    transform: scale(1);
+  }
+  50% { 
+    box-shadow: 0 15px 40px rgba(255, 215, 0, 0.4);
+    transform: scale(1.01);
+  }
+}
+
+.encouragement-content {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.encouragement-icon {
+  font-size: 3.5rem;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.encouragement-text h4 {
+  color: #B8860B;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.encouragement-text p {
+  color: #8B6914;
+  font-size: 1.1rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .current-emotion-display {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+  
+  .emotion-message {
+    min-width: auto;
+  }
+  
+  .emotion-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .emotion-card {
+    padding: 1.2rem;
+  }
+  
+  .emotion-visual {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .character-image-container {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .highlight-circle {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .highlight-character {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .activity-suggestions {
+    grid-template-columns: 1fr;
+  }
+  
+  .tips-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .emotion-reminders {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .emotion-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .emotion-selection-section,
+  .emotion-details-section {
+    padding: 1.5rem;
+  }
+  
+  .intro-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+  
+  .intro-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
+  }
+  
+  .encouragement-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .activity-suggestion {
+    padding: 1.2rem;
+  }
+  
+  .suggestion-number {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+  
+  .suggestion-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.8rem;
+  }
+}
+/* Add these styles to your existing EmotionRecognition.css file */
+
+/* 3x3 Grid Layout */
+.emotion-grid-3x3 {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+}
+
+@media (max-width: 1024px) {
+  .emotion-grid-3x3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .emotion-grid-3x3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Larger Images */
+.character-image-container-large {
+  position: relative;
+  width: 180px;  /* Increased from 120px to 180px */
+  height: 180px; /* Increased from 120px to 180px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.character-image-large {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 20px rgba(0,0,0,0.25));
+  transition: transform 0.3s ease;
+}
+
+.emotion-card:hover .character-image-large {
+  transform: scale(1.15);
+}
+
+.character-emoji-large {
+  font-size: 5rem; /* Increased from 4rem */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+/* Larger highlight circle */
+.highlight-circle-large {
+  width: 240px;  /* Increased from 180px */
+  height: 240px; /* Increased from 180px */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  animation: gentleFloat 3s ease-in-out infinite;
+}
+
+.highlight-content-large {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.highlight-character-large {
+  width: 140px;  /* Increased from 100px */
+  height: 140px; /* Increased from 100px */
+  object-fit: contain;
+  filter: drop-shadow(0 10px 30px rgba(0,0,0,0.4));
+}
+
+.highlight-emoji-large {
+  font-size: 5rem; /* Increased from 4rem */
+}
+
+.highlight-label-large {
+  color: white;
+  font-size: 1.5rem; /* Increased from 1.3rem */
+  font-weight: 700;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.6rem 1.5rem;
+  border-radius: 25px;
+}
+
+/* Adjust emotion card for larger images */
+.emotion-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+  padding: 2rem;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  min-height: 320px; /* Increased for larger content */
+}
+
+.emotion-card:hover {
+  transform: translateY(-10px) scale(1.02); /* Slightly larger hover effect */
+}
+
+.emotion-name {
+  color: #2c3e50;
+  font-size: 1.6rem; /* Increased from 1.4rem */
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  transition: color 0.3s ease;
+}
+
+.emotion-tagline {
+  color: #666;
+  font-size: 1.1rem; /* Increased from 0.95rem */
+  line-height: 1.4;
+  margin-bottom: 0.8rem;
+}
+
+/* Larger selected indicator */
+.selected-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 1rem;
+  background: var(--emotion-color);
+  color: white;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  animation: slideInUp 0.3s ease;
+}
+
+.indicator-icon {
+  font-size: 1.2rem; /* Increased from 1rem */
+}
+
+.indicator-text {
+  font-size: 0.95rem; /* Increased from 0.85rem */
+}
+
+/* Adjust current emotion display for larger images */
+.current-emotion-display {
+  display: flex;
+  align-items: center;
+  gap: 3.5rem; /* Increased from 3rem */
+  margin-bottom: 3.5rem; /* Increased from 3rem */
+  flex-wrap: wrap;
+}
+
+/* Make the emotion circle larger too */
+.emotion-circle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  opacity: 0.2;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.emotion-card:hover .emotion-circle {
+  transform: scale(1.15); /* Increased from 1.1 */
+  opacity: 0.3;
+}
+
+/* Adjust message text for better layout */
+.emotion-message {
+  flex: 1;
+  min-width: 320px; /* Increased from 300px */
+}
+
+.message-header {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem; /* Increased from 1rem */
+  margin-bottom: 1.5rem; /* Increased from 1.2rem */
+}
+
+.message-icon {
+  font-size: 2.2rem; /* Increased from 2rem */
+  color: var(--current-color, #4a6fa5);
+}
+
+.message-header h3 {
+  color: var(--current-color, #2c3e50);
+  font-size: 2rem; /* Increased from 1.8rem */
+  margin: 0;
+}
+
+.message-text {
+  color: #5a6c8d;
+  font-size: 1.2rem; /* Increased from 1.1rem */
+  line-height: 1.6;
+  margin-bottom: 1.8rem; /* Increased from 1.5rem */
+}
+
+/* Adjust validation card */
+.validation-card {
+  background: linear-gradient(135deg, rgba(74, 111, 165, 0.1), rgba(162, 200, 232, 0.2));
+  border-radius: 25px; /* Increased from 20px */
+  padding: 1.8rem; /* Increased from 1.5rem */
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; /* Increased from 1.2rem */
+  border: 2px solid rgba(74, 111, 165, 0.3);
+}
+
+.validation-icon {
+  font-size: 2.8rem; /* Increased from 2.5rem */
+  flex-shrink: 0;
+}

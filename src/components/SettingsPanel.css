@@ -1,0 +1,445 @@
+/* Settings Panel Overlay */
+.settings-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Settings Panel */
+.settings-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 400px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.95));
+  backdrop-filter: blur(20px);
+  box-shadow: -5px 0 30px rgba(0, 0, 0, 0.15);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  animation: slideInRight 0.3s ease;
+  overflow-y: auto;
+}
+
+.dark .settings-panel {
+  background: linear-gradient(135deg, rgba(53, 47, 68, 0.98), rgba(92, 84, 112, 0.95));
+  color: #FAF0E6;
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+/* Settings Header */
+.settings-header {
+  padding: 1.5rem;
+  border-bottom: 2px solid rgba(120, 157, 188, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dark .settings-header {
+  border-bottom-color: rgba(185, 180, 199, 0.4);
+}
+
+.settings-title {
+  font-family: 'Comfortaa', cursive;
+  font-size: 1.5rem;
+  color: #5C5470;
+  margin: 0;
+}
+
+.dark .settings-title {
+  color: #FAF0E6;
+}
+
+.settings-close-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(120, 157, 188, 0.1);
+  border: 2px solid rgba(120, 157, 188, 0.3);
+  color: #5C5470;
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dark .settings-close-btn {
+  background: rgba(185, 180, 199, 0.2);
+  border-color: rgba(185, 180, 199, 0.4);
+  color: #FAF0E6;
+}
+
+.settings-close-btn:hover {
+  background: rgba(120, 157, 188, 0.2);
+  transform: scale(1.1);
+}
+
+.dark .settings-close-btn:hover {
+  background: rgba(185, 180, 199, 0.3);
+}
+
+/* Settings Content */
+.settings-content {
+  flex: 1;
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+.settings-section {
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-size: 1.1rem;
+  color: #789DBC;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.dark .section-title {
+  color: #B9B4C7;
+}
+
+/* Setting Item */
+.setting-item {
+  margin-bottom: 1.5rem;
+}
+
+.setting-label {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.setting-icon {
+  font-size: 1.3rem;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(120, 157, 188, 0.1);
+  border-radius: 10px;
+  color: #789DBC;
+}
+
+.dark .setting-icon {
+  background: rgba(185, 180, 199, 0.2);
+  color: #B9B4C7;
+}
+
+.setting-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #5C5470;
+}
+
+.dark .setting-text {
+  color: #FAF0E6;
+}
+
+/* Setting Controls */
+.setting-control {
+  padding-left: 2.8rem;
+}
+
+/* Theme Buttons */
+.theme-btn {
+  padding: 0.8rem 1.5rem;
+  border-radius: 15px;
+  border: 2px solid rgba(120, 157, 188, 0.3);
+  background: rgba(255, 255, 255, 0.8);
+  color: #5C5470;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-right: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.dark .theme-btn {
+  background: rgba(53, 47, 68, 0.8);
+  border-color: rgba(185, 180, 199, 0.4);
+  color: #FAF0E6;
+}
+
+.theme-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.theme-btn.active {
+  background: linear-gradient(135deg, #789DBC, #5C5470);
+  color: white;
+  border-color: #789DBC;
+}
+
+.dark .theme-btn.active {
+  background: linear-gradient(135deg, #B9B4C7, #5C5470);
+  border-color: #B9B4C7;
+}
+
+/* Sound Buttons */
+.sound-btn {
+  padding: 0.8rem 1.5rem;
+  border-radius: 15px;
+  border: 2px solid rgba(120, 157, 188, 0.3);
+  background: rgba(255, 255, 255, 0.8);
+  color: #5C5470;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-right: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.dark .sound-btn {
+  background: rgba(53, 47, 68, 0.8);
+  border-color: rgba(185, 180, 199, 0.4);
+  color: #FAF0E6;
+}
+
+.sound-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.sound-btn.active {
+  background: linear-gradient(135deg, #4CAF50, #2E7D32);
+  color: white;
+  border-color: #4CAF50;
+}
+
+/* Font Size Controls */
+.font-size-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 250px;
+}
+
+.font-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: rgba(120, 157, 188, 0.1);
+  border: 2px solid rgba(120, 157, 188, 0.3);
+  color: #5C5470;
+  font-size: 1.3rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.dark .font-btn {
+  background: rgba(185, 180, 199, 0.2);
+  border-color: rgba(185, 180, 199, 0.4);
+  color: #FAF0E6;
+}
+
+.font-btn:hover {
+  background: rgba(120, 157, 188, 0.2);
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dark .font-btn:hover {
+  background: rgba(185, 180, 199, 0.3);
+}
+
+.font-size-display {
+  flex: 1;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  background: rgba(120, 157, 188, 0.1);
+  border-radius: 12px;
+  border: 2px solid rgba(120, 157, 188, 0.2);
+}
+
+.dark .font-size-display {
+  background: rgba(185, 180, 199, 0.2);
+  border-color: rgba(185, 180, 199, 0.3);
+}
+
+.font-size-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #5C5470;
+  font-family: 'Comfortaa', cursive;
+}
+
+.dark .font-size-value {
+  color: #FAF0E6;
+}
+
+/* Avatar Options */
+.avatar-options {
+  display: flex;
+  gap: 1rem;
+}
+
+.avatar-btn {
+  flex: 1;
+  padding: 1rem;
+  border-radius: 15px;
+  border: 2px solid rgba(120, 157, 188, 0.3);
+  background: rgba(255, 255, 255, 0.8);
+  color: #5C5470;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.dark .avatar-btn {
+  background: rgba(53, 47, 68, 0.8);
+  border-color: rgba(185, 180, 199, 0.4);
+  color: #FAF0E6;
+}
+
+.avatar-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.avatar-btn.active {
+  background: linear-gradient(135deg, #789DBC, #5C5470);
+  color: white;
+  border-color: #789DBC;
+}
+
+.dark .avatar-btn.active {
+  background: linear-gradient(135deg, #B9B4C7, #5C5470);
+  border-color: #B9B4C7;
+}
+
+.avatar-icon {
+  font-size: 2rem;
+}
+
+.avatar-text {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Settings Footer */
+.settings-footer {
+  padding: 1.5rem;
+  border-top: 2px solid rgba(120, 157, 188, 0.3);
+  text-align: center;
+}
+
+.dark .settings-footer {
+  border-top-color: rgba(185, 180, 199, 0.4);
+}
+
+.settings-done-btn {
+  padding: 0.8rem 3rem;
+  background: linear-gradient(135deg, #789DBC, #5C5470);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 200px;
+}
+
+.settings-done-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(120, 157, 188, 0.3);
+}
+
+/* Settings Button in Header */
+.settings-button {
+  padding: 0.6rem 1.2rem;
+  background: linear-gradient(135deg, rgba(120, 157, 188, 0.9), rgba(92, 84, 112, 0.9));
+  color: white;
+  border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.settings-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(120, 157, 188, 0.3);
+}
+
+.settings-icon {
+  font-size: 1.2rem;
+}
+
+.settings-text {
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .settings-panel {
+    max-width: 100%;
+    border-radius: 0;
+  }
+  
+  .avatar-options {
+    flex-direction: column;
+  }
+  
+  .theme-btn, .sound-btn {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .settings-header {
+    padding: 1rem;
+  }
+  
+  .settings-content {
+    padding: 1rem;
+  }
+  
+  .font-size-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .font-size-display {
+    order: -1;
+  }
+}
