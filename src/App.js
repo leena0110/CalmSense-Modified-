@@ -6,9 +6,11 @@ import EmotionRecognition from './components/EmotionRecognition';
 import SoundTherapy from './components/SoundTherapy';
 import SettingsPanel from './components/SettingsPanel'; // We'll create this
 import './App.css';
+import { Routes, Route, Link, useNavigate } from 'react-router-dom';
+import MoodJournal from './components/MoodJournal';
 
 function App() {
-  const [currentScreen, setCurrentScreen] = useState('home');
+  const navigate = useNavigate(); // Hook for navigation
   const [accessibilitySettings, setAccessibilitySettings] = useState({
     darkMode: false,
     soundEnabled: true,
@@ -17,6 +19,15 @@ function App() {
   const [currentMood, setCurrentMood] = useState('calm');
   const [character, setCharacter] = useState('girl');
   const [showSettings, setShowSettings] = useState(false); // New state for settings panel
+
+  // Navigation function to use with Routes
+  const handleNavigate = (screenId) => {
+    if (screenId === 'home') {
+      navigate('/');
+    } else {
+      navigate(`/${screenId}`);
+    }
+  };
 
   const updateSettings = (key, value) => {
     setAccessibilitySettings(prev => ({
@@ -68,28 +79,6 @@ function App() {
     }
   ];
 
-  const renderScreen = () => {
-    switch (currentScreen) {
-      case 'breathing':
-        return <BreathingExercise soundEnabled={accessibilitySettings.soundEnabled} />;
-      case 'calming':
-        return <CalmingTools soundEnabled={accessibilitySettings.soundEnabled} />;
-      case 'emotion':
-        return <EmotionRecognition currentMood={currentMood} setCurrentMood={setCurrentMood} />;
-      case 'sounds':
-        return <SoundTherapy soundEnabled={accessibilitySettings.soundEnabled} />;
-      default:
-        return (
-          <HomeScreen 
-            activityCards={activityCards}
-            setCurrentScreen={setCurrentScreen}
-            currentMood={currentMood}
-            character={character}
-          />
-        );
-    }
-  };
-
   const appStyle = {
     minHeight: '100vh',
     display: 'flex',
@@ -137,6 +126,10 @@ function App() {
             </span>
           </div>
           
+          <Link to="/journal" className="journal-link">
+            📔 Journal
+          </Link>
+          
           <button 
             className="settings-button"
             onClick={() => setShowSettings(true)}
@@ -146,20 +139,40 @@ function App() {
             <span className="settings-text">Settings</span>
           </button>
           
-          {currentScreen !== 'home' && (
-            <button 
-              className="home-button"
-              onClick={() => setCurrentScreen('home')}
-              aria-label="Go back to home"
-            >
-              🏠 Home
-            </button>
-          )}
+          <button 
+            className="home-button"
+            onClick={() => navigate('/')}
+            aria-label="Go back to home"
+          >
+            🏠 Home
+          </button>
         </div>
       </header>
 
       <main className="main-content">
-        {renderScreen()}
+        <Routes>
+          <Route path="/" element={
+            <HomeScreen 
+              activityCards={activityCards}
+              setCurrentScreen={handleNavigate}
+              currentMood={currentMood}
+              character={character}
+            />
+          } />
+          <Route path="/breathing" element={
+            <BreathingExercise soundEnabled={accessibilitySettings.soundEnabled} />
+          } />
+          <Route path="/calming" element={
+            <CalmingTools soundEnabled={accessibilitySettings.soundEnabled} />
+          } />
+          <Route path="/emotion" element={
+            <EmotionRecognition currentMood={currentMood} setCurrentMood={setCurrentMood} />
+          } />
+          <Route path="/sounds" element={
+            <SoundTherapy soundEnabled={accessibilitySettings.soundEnabled} />
+          } />
+          <Route path="/journal" element={<MoodJournal />} />
+        </Routes>
       </main>
 
       <footer className="app-footer">

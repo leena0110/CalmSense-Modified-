@@ -280,3 +280,16 @@
 .accessibility-toolbar {
   display: none;
 }
+
+.journal-link {
+  background: #5c4d7d;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.journal-link:hover {
+  background: #4a3d6d;
+}
