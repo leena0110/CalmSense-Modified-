@@ -32,6 +32,7 @@ function CalmingTools({ soundEnabled }) {
         rainAudio.currentTime = 0;
       }
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Handle rain sound
@@ -56,6 +57,7 @@ function CalmingTools({ soundEnabled }) {
       rainAudio.currentTime = 0;
       setRainAudio(null);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [soundEnabled, rainPlaying, activeTool]);
 
   // Handle rain volume changes

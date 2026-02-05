@@ -66,6 +66,7 @@ function SoundTherapy({ soundEnabled }) {
       initialVolumes[sound.id] = 0.5;
     });
     setVolumes(initialVolumes);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Volume alert for first time users

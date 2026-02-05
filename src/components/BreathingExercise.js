@@ -32,17 +32,17 @@ function BreathingExercise({ soundEnabled }) {
               return patterns[breathPattern].exhale;
             } else {
               setBreathPhase('inhale');
-              const newCycles = cycles + 1;
-              const newTotal = totalBreaths + 1;
-              setCycles(newCycles);
-              setTotalBreaths(newTotal);
-              
-              // Show celebration every 3 cycles
-              if (newCycles % 3 === 0) {
-                setShowCelebration(true);
-                setCompletedSessions(prev => prev + 1);
-                setTimeout(() => setShowCelebration(false), 2000);
-              }
+              setCycles(c => {
+                const newCycles = c + 1;
+                // Show celebration every 3 cycles
+                if (newCycles % 3 === 0) {
+                  setShowCelebration(true);
+                  setCompletedSessions(s => s + 1);
+                  setTimeout(() => setShowCelebration(false), 2000);
+                }
+                return newCycles;
+              });
+              setTotalBreaths(t => t + 1);
               
               return patterns[breathPattern].inhale;
             }
@@ -52,6 +52,7 @@ function BreathingExercise({ soundEnabled }) {
       }, 1000);
     }
     return () => clearInterval(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isBreathing, breathPhase, breathPattern]);
 
   const handleStartStop = () => {
